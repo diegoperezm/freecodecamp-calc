@@ -6,13 +6,12 @@ html {
 body {
  font: 300 14px 'Helvetica Neue', Helvetica;
  height: 100%;
- overflow-y: hidden;
 }
 
 .content {
  border: 1px solid black;
  margin: 5% 2%;
- height: 80%;
+ height: 80%; 
 }
 
 .graph{
@@ -27,52 +26,41 @@ body {
   padding-top: 5%;
   padding-bottom: 5%;
   min-height: 25px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
-.calc__keys {
+.calc__buttons {
  display: grid;
  grid-template-columns: repeat(5, 0.5fr);
  grid-template-rows: repeat(4, minmax(0, 0.9fr));
  grid-gap: 2%;
- font-size: 1.5rem;
 }
 
-.key {
- font-weight: bolder;
- border-radius: 5px;
-}
-
-.key--minus{
+.button--minus{
  grid-column: 4; 
 }
 
-.key--divide{
+.button--divide{
  grid-column: 5; 
 }
 
-.key--add {
+.button--add {
  grid-column: 4; 
  grid-row: 2/4; 
-
 }
 
-.key--multiply {
+.button--multiply {
  grid-column: 5; 
  grid-row: 2/4; 
 }
 
-.key--equals {
+.button--equals {
  grid-column: 3/5; 
  grid-row: 4; 
 }
 
-.key--ce {
+.button--ce {
  grid-column: 5; 
-}
-
-table {
- height: 50%;
 }
 
 th {
@@ -82,7 +70,7 @@ th {
 }
 
 td {
- font-size:   1rem; 
+ font-size:   0.7rem; 
  padding-left: 8%;
  width: 80%;
 }
