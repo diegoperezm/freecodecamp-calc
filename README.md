@@ -15,7 +15,7 @@ You can:
 * Zoom in (spin the wheel to zoom (scale), or use touch): double click (the diagram)
 * Zoom out (spin the wheel to zoom (scale): shift plus double click (the diagram)
 
-![Finite state machine graph, calculator ](file:img/fcc-calc-v2-bootstrap-graph.gif)
+![Finite state machine graph, calculator ](img/fcc-calc-v2-bootstrap-graph.gif)
 
 
 ## [User Stories](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator)
