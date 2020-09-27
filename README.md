@@ -11,9 +11,11 @@ The `state transition table`  is a string that is passed as input to two scripts
 ## Diagram
 
 You can: 
-* Move  the diagram: click (the diagram, keep pressing) plus  mouse  movements
-* Zoom in: double click (the diagram)
-* Zoom out: shift plus double click (the diagram)
+* Move the diagram (click-and-drag to pan (translate): click (the diagram, keep pressing) plus  mouse  movements
+* Zoom in (spin the wheel to zoom (scale), or use touch): double click (the diagram)
+* Zoom out (spin the wheel to zoom (scale): shift plus double click (the diagram)
+
+![Finite state machine graph, calculator ](img/fcc-calc-v2-bootstrap-graph.gif)
 
 
 ## [User Stories](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator)
@@ -54,6 +56,98 @@ EXAMPLE: 3 + 5 x 6 - 2 / 4 =
 
     Immediate Execution Logic: 11.5
     Formula/Expression Logic: 32.5
+
+
+## Comments about the code
+
+In order to avoid "too many arrows" I am using a "type" plus "payload" approach. 
+
+The idea is  use only seven events("types") and use "payload" to specify a value:
+
+- number
+- oprtr 
+- minus
+- zero
+- equals
+- dot
+- ce
+
+
+``` javascript
+ const input = {
+    seven:    {type: "number",   payload: 7  },
+    eight:    {type: "number",   payload: 8  },
+    nine :    {type: "number",   payload: 9  },
+    add  :    {type: "oprtr",    payload:"+" },
+    multiply: {type: "oprtr",    payload:"X" },
+    four:     {type: "number",   payload: 4  },
+    five:     {type: "number",   payload: 5  },
+    six:      {type: "number",   payload: 6  },
+    divide:   {type: "oprtr",    payload:"/" },
+    one:      {type: "number",   payload: 1  },
+    two:      {type: "number",   payload: 2  },
+    three:    {type: "number",   payload: 3  },
+    minus:    {type: "minus",    payload:"-" },
+    zero :    {type: "zero",     payload: 0  },
+    equals:   {type: "equals",   payload: "="},
+    dot:      {type: "dot",      payload: "."},
+    ce:       {type: "ce",                   }
+ };
+```
+
+The state transition table (string)  is simple and easy to follow: 
+   
+   
+- The calculator has a local state (context): 
+
+``` javascript
+const stateTransitionTable =
+`
+context:
+      data: [ 0 ]
+     opnd1: []
+     oprtr: []
+     opnd2: []
+
+...
+
+`
+```
+
+- The state transition table describe:
+   - The current state 
+   - The input that produce a transition (to the next valid state) 
+   - The next state 
+   - Side effects (actions/function calls) that will take place
+
+
+``` javascript
+const stateTransitionTable =
+
+`
+ *START  number  OPND1  entry: displaydata   :setlastdata     :setopnd1  exit: displaydata
+... 
+`
+```
+
+In the above code we have: 
+
+- Initial state:  START (the initial state is marked with a star)
+
+- Input: number
+
+- Next state: OPND1
+
+- Side effects:
+ 
+  - Entry actions:        displaydata
+  - Transition actions:   setlastdata , setopnd1 
+  - Exit actions:         displaydata
+
+
+When the state is entered the `entry` action (displaydata) will be executed, when the input (number) is received the `transition` actions (setlastdata , setopnd1) will be executed. When the state is exited the `exit` action (displaydata) will be executed.
+
+
 
 
 ## Demo
