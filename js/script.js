@@ -185,7 +185,7 @@ id: calc
   LASTOPRTR       number       OPND2                              :setdata         :setopnd2             exit: displaydata
   LASTOPRTR       oprtr        LASTOPRTR                          :setlastdata     :setlastoprtr         exit: displaydata
   LASTOPRTR       zero         OPND2ZERO                          :setdata         :setopnd2             exit: displaydata
-  LASTOPRTR       minus        OPND2MINUS                         :setdata         :setopnd2             exit: displaydata
+  LASTOPRTR       minus        OPND2MINUS                         :setlastdata     :setopnd2             exit: displaydata
 
   LASTOPRTR       ce           START                              :setdatazero     :setopnd1empt 
                                                                   :setoprtrempt    :setopnd2empt         exit: displaydata        
