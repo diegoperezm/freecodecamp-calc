@@ -145,52 +145,67 @@ id: calc
   OPND1           oprtr        OPRTR                              :setdata         :setoprtr             exit: displaydata
   OPND1           minus        OPRTR                              :setdata         :setoprtr             exit: displaydata
   OPND1           dot          OPND1DOT                           :setdata         :setopnd1             exit: displaydata
+
   OPND1           ce           START                              :setdatazero     :setopnd1empt
-                                                                  :setoprtrempt    :setopnd2empt        
+                                                                  :setoprtrempt    :setopnd2empt         exit: displaydata        
+
 
   OPND1MINUS      number       OPND1                              :setdata         :setopnd1             exit: displaydata
   OPND1MINUS      zero         OPND1ZERO                          :setdata         :setopnd1             exit: displaydata
+
   OPND1MINUS      ce           START                              :setdatazero     :setopnd1empt
-                                                                  :setoprtrempt    :setopnd2empt        
+                                                                  :setoprtrempt    :setopnd2empt         exit: displaydata        
+
                                            
   OPND1DOT        number       OPND1DOT                           :setdata         :setopnd1             exit: displaydata
   OPND1DOT        zero         OPND1DOT                           :setdata         :setopnd1             exit: displaydata
   OPND1DOT        oprtr        OPRTR                              :setdata         :setoprtr             exit: displaydata
   OPND1DOT        minus        OPRTR                              :setdata         :setoprtr             exit: displaydata
+
   OPND1DOT        ce           START                              :setdatazero     :setopnd1empt
-                                                                  :setoprtrempt    :setopnd2empt        
+                                                                  :setoprtrempt    :setopnd2empt         exit: displaydata        
+
 
   OPND1ZERO       dot          OPND1DOT                           :setdata         :setopnd1             exit: displaydata
+
   OPND1ZERO       ce           START                              :setdatazero     :setopnd1empt
-                                                                  :setoprtrempt    :setopnd2empt        
+                                                                  :setoprtrempt    :setopnd2empt         exit: displaydata        
+
 
   OPRTR           number       OPND2                              :setdata         :setopnd2             exit: displaydata
   OPRTR           zero         OPND2ZERO                          :setdata         :setopnd2             exit: displaydata
   OPRTR           oprtr        LASTOPRTR                          :setlastdata     :setlastoprtr         exit: displaydata
   OPRTR           minus        OPND2MINUS                         :setdata         :setopnd2             exit: displaydata
+
   OPRTR           ce           START                              :setdatazero     :setopnd1empt 
-                                                                  :setoprtrempt    :setopnd2empt         
+                                                                  :setoprtrempt    :setopnd2empt         exit: displaydata         
+
 
 
   LASTOPRTR       number       OPND2                              :setdata         :setopnd2             exit: displaydata
   LASTOPRTR       oprtr        LASTOPRTR                          :setlastdata     :setlastoprtr         exit: displaydata
   LASTOPRTR       zero         OPND2ZERO                          :setdata         :setopnd2             exit: displaydata
   LASTOPRTR       minus        OPND2MINUS                         :setdata         :setopnd2             exit: displaydata
+
   LASTOPRTR       ce           START                              :setdatazero     :setopnd1empt 
-                                                                  :setoprtrempt    :setopnd2empt        
+                                                                  :setoprtrempt    :setopnd2empt         exit: displaydata        
+
 
   OPND2           number       OPND2                              :setdata         :setopnd2             exit: displaydata
   OPND2           zero         OPND2                              :setdata         :setopnd2             exit: displaydata
   OPND2           equals       RESULT                             :calculate       :displaydata
   OPND2           dot          OPND2DOT                           :setdata         :setopnd2             exit: displaydata
+
   OPND2           oprtr        OPRTR                              :setdata         :setopnd1result          
                                                                   :setlastoprtr    :setopnd2empt         exit: displaydata
+
 
   OPND2           minus        OPRTR                              :setdata         :setopnd1result          
                                                                   :setlastoprtr    :setopnd2empt         exit: displaydata
 
   OPND2           ce           START                              :setdatazero     :setopnd1empt 
-                                                                  :setoprtrempt    :setopnd2empt        
+                                                                  :setoprtrempt    :setopnd2empt         exit: displaydata        
+
 
 
   OPND2MINUS      zero         OPND2ZERO                          :setdata         :setopnd2             exit: displaydata
@@ -201,7 +216,8 @@ id: calc
                                                                   :setopnd2empt                          exit: displaydata
 
   OPND2MINUS      ce           START                              :setdatazero     :setopnd1empt 
-                                                                  :setoprtrempt    :setopnd2empt        
+                                                                  :setoprtrempt    :setopnd2empt         exit: displaydata        
+
 
   OPND2DOT        number       OPND2DOT                           :setdata         :setopnd2             exit: displaydata
   OPND2DOT        zero         OPND2DOT                           :setdata         :setopnd2             exit: displaydata
@@ -209,18 +225,21 @@ id: calc
   OPND2DOT        equals       RESULT                             :calculate       :displaydata
 
   OPND2DOT        ce           START                              :setdatazero     :setopnd1empt 
-                                                                  :setoprtrempt    :setopnd2empt        
+                                                                  :setoprtrempt    :setopnd2empt         exit: displaydata        
+
 
   OPND2ZERO       dot          OPND2DOT                           :setdata         :setopnd2             exit: displaydata
+
   OPND2ZERO       ce           START                              :setdatazero     :setopnd1empt 
-                                                                  :setoprtrempt    :setopnd2empt  
+                                                                  :setoprtrempt    :setopnd2empt         exit: displaydata  
+
 
 
   RESULT          oprtr        OPRTR                              :setdata         :setopnd1result          
                                                                   :setlastoprtr    :setopnd2empt         exit: displaydata
 
   RESULT          ce           START                              :setdatazero     :setopnd1empt 
-                                                                  :setoprtrempt    :setopnd2empt
+                                                                  :setoprtrempt    :setopnd2empt         exit: displaydata
  `;
 
 
