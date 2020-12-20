@@ -196,8 +196,9 @@ id: calc
   OPND2           equals       RESULT                             :calculate       :displaydata
   OPND2           dot          OPND2DOT                           :setdata         :setopnd2             exit: displaydata
 
-  OPND2           oprtr        OPRTR                              :setdata         :setopnd1result          
-                                                                  :setlastoprtr    :setopnd2empt         exit: displaydata
+  OPND2           oprtr        OPRTR                              :calculate       :setopnd1result      
+                                                                  :setlastoprtr    :setopnd2empt 
+                                                                  :setdata                               exit: displaydata
 
 
   OPND2           minus        OPRTR                              :setdata         :setopnd1result          
@@ -221,7 +222,14 @@ id: calc
 
   OPND2DOT        number       OPND2DOT                           :setdata         :setopnd2             exit: displaydata
   OPND2DOT        zero         OPND2DOT                           :setdata         :setopnd2             exit: displaydata
-  OPND2DOT        oprtr        OPRTR                              :setdata         :setoprtr             exit: displaydata
+
+  OPND2DOT        oprtr        OPRTR                               :calculate       :setopnd1result
+                                                                   :setlastoprtr    :setopnd2empt
+                                                                   :setdata                               exit: displaydata
+
+
+
+
   OPND2DOT        equals       RESULT                             :calculate       :displaydata
 
   OPND2DOT        ce           START                              :setdatazero     :setopnd1empt 
